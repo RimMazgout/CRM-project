@@ -1,0 +1,10 @@
+"variation (une seule à la fois, scénario central)",C1,C2,C3
+référence (scénario central),0.1574,0.0446,0.0478
+marge 25 % au lieu de 30 %,0.1889,0.0594,0.0598
+marge 35 % au lieu de 30 %,0.1349,0.0357,0.0399
+coût par contact × 2,0.2911,0.0458,0.0496
+coût par contact ÷ 2,0.0906,0.044,0.047
+usage de l'offre × 2 (clients qui auraient acheté),0.1574,0.0825,0.0743
+panier historique − 20 %,0.1968,0.0462,0.0532
+départ sans campagne p0 − 10 points,0.2212,0.0658,0.0684
+départ sans campagne p0 + 10 points,0.1222,0.0289,0.0351

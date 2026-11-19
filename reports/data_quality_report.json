@@ -1,0 +1,525 @@
+{
+  "provenance": {
+    "url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+    "zip_bytes": 45622418,
+    "zip_sha256": "572E36277C2390FBFDE10664750731E0A86F55E33470D91919085F0408E67BFB",
+    "zip_sha256_epinglee": "572E36277C2390FBFDE10664750731E0A86F55E33470D91919085F0408E67BFB",
+    "zip_conforme_a_la_valeur_epinglee": true,
+    "changement_de_source_accepte": false,
+    "xlsx_dans_zip": "online_retail_II.xlsx",
+    "xlsx_bytes": 45622278,
+    "xlsx_sha256": "BCBE73B35F5B7BABF197FB0CB983A11F5D9FF929078D4AA53D171B1F2DF2E980",
+    "xlsx_identique_au_contenu_du_zip": true
+  },
+  "nettoyage": [
+    {
+      "etape": "lignes brutes",
+      "lignes_retirees": 0,
+      "lignes_restantes": 1067371,
+      "note": ""
+    },
+    {
+      "etape": "chevauchement entre feuilles (copie identique retiree)",
+      "lignes_retirees": 22523,
+      "lignes_restantes": 1044848,
+      "note": "2010-12-01 au 2010-12-09, copie verifiee identique"
+    },
+    {
+      "etape": "doublons exacts dans une meme feuille (CONSERVES)",
+      "lignes_retirees": 0,
+      "lignes_restantes": 1044848,
+      "note": "11812 lignes concernees, a valider"
+    },
+    {
+      "etape": "annulations / retours (factures C*) mis de cote",
+      "lignes_retirees": 19165,
+      "lignes_restantes": 1025683,
+      "note": "ecrits dans returns.parquet, non deduits"
+    },
+    {
+      "etape": "lignes non produit (regle documented)",
+      "lignes_retirees": 4702,
+      "lignes_restantes": 1020981,
+      "note": "frais, ajustements, tests, bons cadeaux"
+    },
+    {
+      "etape": "quantite <= 0 ou prix <= 0",
+      "lignes_retirees": 5972,
+      "lignes_restantes": 1015009,
+      "note": "ajustements de stock, dettes, prix a 0"
+    },
+    {
+      "etape": "Customer ID manquant",
+      "lignes_retirees": 226882,
+      "lignes_restantes": 788127,
+      "note": "2,576,013 GBP de montant brut hors analyse client"
+    }
+  ],
+  "codes_exclus": [
+    {
+      "code": "POST",
+      "lignes": 1858,
+      "lignes_avec_customer_id": 1803,
+      "description": "POSTAGE"
+    },
+    {
+      "code": "DOT",
+      "lignes": 1422,
+      "lignes_avec_customer_id": 16,
+      "description": "DOTCOM POSTAGE"
+    },
+    {
+      "code": "M",
+      "lignes": 868,
+      "lignes_avec_customer_id": 698,
+      "description": "Manual"
+    },
+    {
+      "code": "C2",
+      "lignes": 270,
+      "lignes_avec_customer_id": 248,
+      "description": "CARRIAGE"
+    },
+    {
+      "code": "23444",
+      "lignes": 80,
+      "lignes_avec_customer_id": 79,
+      "description": "Next Day Carriage"
+    },
+    {
+      "code": "ADJUST",
+      "lignes": 36,
+      "lignes_avec_customer_id": 32,
+      "description": "Adjustment by john on 26/01/2010 16"
+    },
+    {
+      "code": "BANK CHARGES",
+      "lignes": 34,
+      "lignes_avec_customer_id": 31,
+      "description": "Bank Charges"
+    },
+    {
+      "code": "GIFT_0001_20",
+      "lignes": 29,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £20.00"
+    },
+    {
+      "code": "GIFT_0001_30",
+      "lignes": 29,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £30.00"
+    },
+    {
+      "code": "GIFT_0001_10",
+      "lignes": 16,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £10.00"
+    },
+    {
+      "code": "TEST001",
+      "lignes": 11,
+      "lignes_avec_customer_id": 11,
+      "description": "This is a test product."
+    },
+    {
+      "code": "GIFT_0001_50",
+      "lignes": 8,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £50.00"
+    },
+    {
+      "code": "GIFT_0001_40",
+      "lignes": 7,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £40.00"
+    },
+    {
+      "code": "B",
+      "lignes": 6,
+      "lignes_avec_customer_id": 0,
+      "description": "Adjust bad debt"
+    },
+    {
+      "code": "D",
+      "lignes": 5,
+      "lignes_avec_customer_id": 5,
+      "description": "Discount"
+    },
+    {
+      "code": "ADJUST2",
+      "lignes": 3,
+      "lignes_avec_customer_id": 3,
+      "description": "Adjustment by Peter on Jun 25 2010 "
+    },
+    {
+      "code": "AMAZONFEE",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "AMAZON FEE"
+    },
+    {
+      "code": "S",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "SAMPLES"
+    },
+    {
+      "code": "GIFT_0001_80",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £80.00"
+    },
+    {
+      "code": "GIFT_0001_70",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "Dotcomgiftshop Gift Voucher £70.00"
+    },
+    {
+      "code": "GIFT_0001_90",
+      "lignes": 2,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "TEST002",
+      "lignes": 2,
+      "lignes_avec_customer_id": 1,
+      "description": "This is a test product."
+    },
+    {
+      "code": "GIFT_0001_60",
+      "lignes": 2,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "C3",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "GIFT",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    }
+  ],
+  "codes_non_numeriques_conserves": [
+    {
+      "code": "DCGS0058",
+      "lignes": 31,
+      "lignes_avec_customer_id": 0,
+      "description": "MISO PRETTY  GUM"
+    },
+    {
+      "code": "DCGSSGIRL",
+      "lignes": 25,
+      "lignes_avec_customer_id": 0,
+      "description": "GIRLS PARTY BAG"
+    },
+    {
+      "code": "DCGSSBOY",
+      "lignes": 23,
+      "lignes_avec_customer_id": 0,
+      "description": "BOYS PARTY BAG"
+    },
+    {
+      "code": "PADS",
+      "lignes": 18,
+      "lignes_avec_customer_id": 18,
+      "description": "PADS TO MATCH ALL CUSHIONS"
+    },
+    {
+      "code": "DCGS0076",
+      "lignes": 14,
+      "lignes_avec_customer_id": 0,
+      "description": "SUNJAR LED NIGHT NIGHT LIGHT"
+    },
+    {
+      "code": "DCGS0003",
+      "lignes": 14,
+      "lignes_avec_customer_id": 0,
+      "description": "BOXED GLASS ASHTRAY"
+    },
+    {
+      "code": "DCGS0069",
+      "lignes": 6,
+      "lignes_avec_customer_id": 0,
+      "description": "OOH LA LA DOGS COLLAR"
+    },
+    {
+      "code": "DCGS0004",
+      "lignes": 5,
+      "lignes_avec_customer_id": 0,
+      "description": "HAYNES CAMPER SHOULDER BAG"
+    },
+    {
+      "code": "DCGS0072",
+      "lignes": 4,
+      "lignes_avec_customer_id": 0,
+      "description": "CAT CAMOUFLAGUE COLLAR"
+    },
+    {
+      "code": "DCGS0066N",
+      "lignes": 4,
+      "lignes_avec_customer_id": 0,
+      "description": "NAVY CUDDLES DOG HOODIE"
+    },
+    {
+      "code": "DCGS0068",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "DOGS NIGHT COLLAR"
+    },
+    {
+      "code": "DCGS0070",
+      "lignes": 3,
+      "lignes_avec_customer_id": 0,
+      "description": "CAMOUFLAGE DOG COLLAR"
+    },
+    {
+      "code": "SP1002",
+      "lignes": 3,
+      "lignes_avec_customer_id": 2,
+      "description": "KID'S CHALKBOARD/EASEL"
+    },
+    {
+      "code": "DCGS0037",
+      "lignes": 2,
+      "lignes_avec_customer_id": 0,
+      "description": "KEY-RING CORKSCREW"
+    },
+    {
+      "code": "DCGS0062",
+      "lignes": 2,
+      "lignes_avec_customer_id": 0,
+      "description": "ROAD-RAGE CAR FRESHENER"
+    },
+    {
+      "code": "DCGS0006",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0016",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0041",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": "HAYNES MINI-COOPER PLAYING CARDS"
+    },
+    {
+      "code": "DCGS0036",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0027",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0066P",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0060",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0057",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0059",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0056",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0044",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": "HANDZ-OFF CAR FRESHENER"
+    },
+    {
+      "code": "DCGS0053",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0055",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0039",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": ""
+    },
+    {
+      "code": "DCGS0073",
+      "lignes": 1,
+      "lignes_avec_customer_id": 0,
+      "description": "ebay"
+    }
+  ],
+  "lignes_avant_filtre_customer_id": 1015009,
+  "montant_brut_avant_filtre_customer_id_gbp": 19699754.46,
+  "sensibilite_regle_stockcode": {
+    "regle_initiale_5_chiffres": {
+      "lignes_vente_avant_filtre_customer_id": 1014945,
+      "montant_brut_avant_filtre_customer_id_gbp": 19699784.97,
+      "lignes_achat": 788187,
+      "clients": 5852,
+      "factures": 36594,
+      "montant_brut_gbp": 17124926.23,
+      "lignes_retour": 17641,
+      "clients_avec_retour": 2444,
+      "montant_retours_gbp": -713009.65
+    },
+    "regle_documentee": {
+      "lignes_vente_avant_filtre_customer_id": 1015009,
+      "montant_brut_avant_filtre_customer_id_gbp": 19699754.46,
+      "lignes_achat": 788127,
+      "clients": 5852,
+      "factures": 36594,
+      "montant_brut_gbp": 17123741.0,
+      "lignes_retour": 17641,
+      "clients_avec_retour": 2445,
+      "montant_retours_gbp": -713031.25
+    }
+  },
+  "brut": {
+    "lignes": 1067371,
+    "lignes_par_feuille": {
+      "Year 2010-2011": 541910,
+      "Year 2009-2010": 525461
+    },
+    "periode_par_feuille": {
+      "Year 2009-2010": [
+        "2009-12-01 07:45:00",
+        "2010-12-09 20:01:00"
+      ],
+      "Year 2010-2011": [
+        "2010-12-01 08:26:00",
+        "2011-12-09 12:50:00"
+      ]
+    },
+    "valeurs_manquantes": {
+      "Invoice": 0,
+      "StockCode": 0,
+      "Description": 4382,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "Price": 0,
+      "Customer ID": 243007,
+      "Country": 0
+    },
+    "part_customer_id_manquant_pct": 22.77,
+    "annulations_pct_des_lignes": 1.83,
+    "quantite_negative_hors_annulation": 3457,
+    "prix_nul_ou_negatif": 6207
+  },
+  "achats_nettoyes": {
+    "lignes": 788127,
+    "clients": 5852,
+    "factures": 36594,
+    "periode": [
+      "2009-12-01 07:45:00",
+      "2011-12-09 12:50:00"
+    ],
+    "montant_brut_total_gbp": 17123741.0,
+    "montant_brut_note": "Quantity*Price des factures de vente, retours NON deduits",
+    "clients_une_seule_facture_pct": 27.65,
+    "mediane_factures_par_client": 3.0,
+    "pays_top5_part_lignes_pct": {
+      "United Kingdom": 90.22,
+      "Germany": 2.01,
+      "EIRE": 1.95,
+      "France": 1.66,
+      "Netherlands": 0.63
+    },
+    "quantite_p99": 128.0,
+    "quantite_max": 80995.0,
+    "prix_p99": 12.75,
+    "prix_max": 649.5,
+    "montant_ligne_max_gbp": 168469.6,
+    "lignes_par_mois": {
+      "2009-12": 30690,
+      "2010-01": 21689,
+      "2010-02": 23287,
+      "2010-03": 32164,
+      "2010-04": 27124,
+      "2010-05": 28563,
+      "2010-06": 31095,
+      "2010-07": 26936,
+      "2010-08": 26311,
+      "2010-09": 34468,
+      "2010-10": 49413,
+      "2010-11": 60126,
+      "2010-12": 26056,
+      "2011-01": 21137,
+      "2011-02": 19851,
+      "2011-03": 27055,
+      "2011-04": 22555,
+      "2011-05": 28206,
+      "2011-06": 27070,
+      "2011-07": 26709,
+      "2011-08": 26891,
+      "2011-09": 39864,
+      "2011-10": 49359,
+      "2011-11": 64276,
+      "2011-12": 17232
+    }
+  },
+  "retours": {
+    "lignes": 17641,
+    "clients_concernes": 2445,
+    "montant_retours_gbp": -713031.25,
+    "retours_en_pct_du_montant_brut": 4.16,
+    "clients_avec_retour_pct": 41.78,
+    "traitement": "table separee, non deduite du montant des achats"
+  },
+  "controles": {
+    "zip_conforme_a_la_valeur_epinglee_ou_changement_accepte": true,
+    "xlsx_identique_au_contenu_du_zip": true,
+    "aucune_annulation_dans_achats": true,
+    "aucun_code_non_produit_dans_achats_ni_retours": true,
+    "quantite_et_prix_positifs": true,
+    "customer_id_sans_nan": true,
+    "aucun_doublon_inter_feuilles": true,
+    "retours_quantite_negative": true
+  },
+  "caches": {
+    "origine_des_donnees_brutes_a_cette_execution": "cache parquet valide reutilise",
+    "raw_parquet_sha256": "121686E90C9CEEBDA6F38B802C0D2118887053AB2698ABD5BAC97F68D44F00CE",
+    "purchases_parquet_sha256": "B93A6003ED65AA99A2D8E6EAB99537DDB3AF58E30513CE0A5C5DD94AFFFC0FF6",
+    "returns_parquet_sha256": "7E609463931826D7FFE9EA3FFAFDED2DB3B8EE5A812FDD68F6C01E4F65231E54"
+  }
+}

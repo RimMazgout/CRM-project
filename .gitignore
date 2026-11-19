@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+notebooks/_repro_run*.ipynb
+
+# Data & Datasets
+data/
+*.parquet
+*.xlsx
+*.zip
+*.tar.gz
+
+# Environment variables & secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+secrets/
+credentials.json
+token.json
+
+# IDEs & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

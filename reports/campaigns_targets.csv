@@ -1,0 +1,4 @@
+campagne,segment,part_du_segment_ciblée,clients_ciblés,clients_du_segment,départ_observé_sans_campagne,probabilité_moyenne_prédite (non calibrée),panier_médian_historique_gbp,factures_médianes_avant_T
+C1,Champions,0.25,225,899,0.3467,0.4305,359.7055,9.0
+C2,Réguliers à risque,0.5,917,1833,0.6641,0.7671,303.45,3.0
+C3,Récents à développer,1.0,367,367,0.4305,0.573,258.38,2.0

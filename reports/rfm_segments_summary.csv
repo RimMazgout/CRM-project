@@ -1,0 +1,5 @@
+segment,reference_date,clients,R_médiane_j,F_médiane,M_médiane_gbp,R_moyenne_j,F_moyenne,M_moyenne_gbp,ventes_brutes_gbp,ancienneté_médiane_j,part_nouveaux_90j,part_une_seule_facture,part_avec_retour,part_clients,part_ventes_brutes
+Champions,2011-09-01,851,21.0,14.0,5288.25,31.6827,19.369,10671.0395,9081054.578,588.0,0.0,0.0,0.8273,0.1629,0.6715
+Réguliers à risque,2011-09-01,1530,167.5,5.0,1483.78,197.7967,5.1837,2036.5542,3115927.935,537.0,0.0026,0.0105,0.5444,0.2929,0.2304
+Récents à développer,2011-09-01,753,30.0,3.0,644.3,34.668,2.9017,809.1696,609304.742,180.0,0.3333,0.2218,0.2975,0.1441,0.0451
+Endormis,2011-09-01,2090,318.0,1.0,293.765,337.4263,1.4043,342.7124,716268.831,374.0,0.0273,0.6694,0.1833,0.4001,0.053

@@ -1,0 +1,5 @@
+modèle,variante,précision,rappel,f1,auc
+Régression logistique,ventes brutes seules (version 1),0.723,0.865,0.788,0.795
+Régression logistique,+ variables de retours,0.729,0.848,0.784,0.795
+Forêt aléatoire,ventes brutes seules (version 1),0.722,0.857,0.784,0.797
+Forêt aléatoire,+ variables de retours,0.726,0.85,0.783,0.798

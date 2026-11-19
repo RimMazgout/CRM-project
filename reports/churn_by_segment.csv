@@ -1,0 +1,5 @@
+segment,clients,taux_churn_réel,proba_moyenne,part_prédite_churn,part_clients
+Champions,899,0.1646,0.243,0.0044,0.1721
+Réguliers à risque,1833,0.5428,0.652,0.695,0.3509
+Récents à développer,367,0.4305,0.573,0.5368,0.0703
+Endormis,2125,0.7939,0.8416,0.9901,0.4068

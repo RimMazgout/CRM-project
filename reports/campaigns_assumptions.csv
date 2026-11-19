@@ -1,0 +1,10 @@
+type,campagne,scénario,remise_d,commandes_par_client_réactivé,reactivation_r,marge_m,cout_par_contact_gbp,cout_fixe_gbp,usage_offre_s,facteur_panier
+SIMULATION,C1,prudent,0.0,1.0,0.05,0.25,8.0,300,0.0,0.8
+SIMULATION,C1,central,0.0,1.0,0.1,0.3,5.0,200,0.0,1.0
+SIMULATION,C1,optimiste,0.0,1.0,0.15,0.35,3.0,150,0.0,1.0
+SIMULATION,C2,prudent,0.1,1.0,0.03,0.25,0.1,300,0.2,0.8
+SIMULATION,C2,central,0.1,1.0,0.06,0.3,0.05,200,0.15,1.0
+SIMULATION,C2,optimiste,0.1,1.0,0.1,0.35,0.03,150,0.1,1.0
+SIMULATION,C3,prudent,0.05,1.0,0.05,0.25,0.1,300,0.15,0.8
+SIMULATION,C3,central,0.05,1.0,0.08,0.3,0.05,200,0.1,1.0
+SIMULATION,C3,optimiste,0.05,1.0,0.12,0.35,0.03,150,0.05,1.0
